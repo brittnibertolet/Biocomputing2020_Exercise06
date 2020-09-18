@@ -1,6 +1,6 @@
 #ex1: sorts by gender and yearsExp
 
-cat wages.csv | cut -d , -f 1,2 | tr , " " | sort -k 1,1 -k2,2n | uniq
+cat wages.csv | cut -d , -f 1,2 | tr , " " | sort -k 1,1 -k2,2n | uniq > genderYrsExp.txt
 
 #ex2:returns gender, yrs exp, wage for highest earner
 #returns gender, yrs exp, wage for lowest earner
