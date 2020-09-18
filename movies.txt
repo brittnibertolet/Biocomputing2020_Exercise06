@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 Lord of the Rings
 Pirates of the Caribbean
 Harry Potter
 Star Wars
 Indiana Jones
 Captain America
+=======
+Captain America
+Star Wars
+Indiana Jones
+Harry Potter
+Pirates of the Caribbean
+Lord of the Rings
+>>>>>>> d2d1b2a74e21c9b828dd44752da179c6ca95e335
+
+Harry Potter
+Star Wars
+Indiana Jones
+Pirates of the Caribbean
+Captain America
+Lord of the Rings
