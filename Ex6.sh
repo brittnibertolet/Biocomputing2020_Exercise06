@@ -1,3 +1,11 @@
+#This is the script for part 1 of exercise 6
+#Write a file containing the unique gender-yearsExperience combinations in file wages.csv
+#File created should contain gender in first column and yearsExperience in a second column, space separating columns
+#Rows should be sorted first by gender, then by yearsExperience, keep pairings in a given row intact
+#Don't worry about column names in output file
+
+
+
 #This is the script for part 2 of exercise 6. 
 #This script must do 3 things 1) display data (gender, years experience, and wage) for highest earner 
 # 2) dislay the same data for the lowest earner and 3)display the number of females in the top 10 wage earners
