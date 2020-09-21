@@ -30,3 +30,12 @@ cat wages.csv | sort -r  -t , -k 4 | head -n 11 |grep  "female" |wc -l
 #This is the script for part 3 of exercise 6
 #Return to stdout: the effect of graduating college (12 vs 16 years of school) on the minimum wage for earners in this dataset
 #Hint 1: You can assign the output of a pipeline to a variable w/code: 
+
+#To return the  minimum wage for college graduates (16 years of education). First sort by column 3 (years of education) and use the tail function to isolate those with college degrees. Now that only those with college degrees are in standard out sort again by column 4 (wage) to identify the lowest earner. 
+cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1
+
+# I think the above needs to be stored as a variable, but when I tried the syntax the Exercise provided, I couldn't do the "bc" math part
+
+#To return the minimum wage for highschool gradutes (12 years of education).You can use the cut function to only show columns  3 and 4 (leaving in column 2 makes it difficult to use grep). Then using grep we can isolate the subset of those with 12 years of education. The special character ^ allows us to eliminate matches in column 4
+cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1  
+
