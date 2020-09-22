@@ -4,21 +4,8 @@
 #Rows should be sorted first by gender, then by yearsExperience, keep pairings in a given row intact
 #Don't worry about column names in output file
 
-#steps:
-#cat wages.csv
-#4 columns total, we just want the first two (gender, yearsExperience)
-#also csv is comma separated, so we need to make this space separated instead I think?
-#sort by gender, then by years experience --> test to see if/how to keep the pairs intact?
-	#
-#output to gender-yearsExperience.txt file
 
-# so my notes say use cut, and -f 2 to get first two columns, -d for comma delimited
-#but im getting thisESCs-iMac-3:Biocomputing2020_Exercise06 archielab$ cat wages.csv | cut -d -f 2 wages.csv
-#cut: bad delimiter
-#ESCs-iMac-3:Biocomputing2020_Exercise06 archielab$ cut -d -f 2 wages.csv
-#cut: bad delimiter
-#I'm going to go to office hours on Tuesday...I've tried a lot of variations of this and googling without success yet
-
+sort -t, -k1,1 -k2,2n wages.csv | cut -d, -f1,2 | tr ',' ' ' >> "gender-yearsExperience.csv"
 
 
 
