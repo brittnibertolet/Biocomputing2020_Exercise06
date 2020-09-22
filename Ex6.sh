@@ -43,3 +43,9 @@ cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1
 # We want college earners min - high school earners min right?
 cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d, -f2  
 
+
+# Hm I was getting this error before I added the little cut thing at the end, and I'm still getting it now...
+# I'm working in the Biocomputing2020_Exercise06 folder which has wages.csv when I ls
+chelseas-air:Biocomputing2020_Exercise06 Chelsea$ college_earnings=$cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d, -f4
+-bash: wages.csv: command not found
+
