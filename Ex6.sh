@@ -32,7 +32,14 @@ cat wages.csv | sort -r  -t , -k 4 | head -n 11 |grep  "female" |wc -l
 cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1
 
 # I think the above needs to be stored as a variable, but when I tried the syntax the Exercise provided, I couldn't do the "bc" math part
+# CS: I think you have to cut it so only the salary is stored under the variable?
+cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d, -f4 
+
 
 #To return the minimum wage for highschool gradutes (12 years of education).You can use the cut function to only show columns  3 and 4 (leaving in column 2 makes it difficult to use grep). Then using grep we can isolate the subset of those with 12 years of education. The special character ^ allows us to eliminate matches in column 4
-cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1  
+cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1
+
+# CS: And again here? If that's right? I'm not 100% I'm answering the right question.
+# We want college earners min - high school earners min right?
+cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d, -f2  
 
