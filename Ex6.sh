@@ -58,3 +58,11 @@ chelseas-air:Biocomputing2020_Exercise06 Chelsea$ college_earnings=$cat wages.cs
 college_earners=$(cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d , -f 4)
 hs_earners=$(cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d , -f 2)
 "$college_earners - $hs_earners" | bc
+
+#CS: This worked for me! I googled and found a solution? If you could double check this and my code for #1 that would be great, I checked #2 and it looks good!
+college_earners=$(cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d , -f 4)
+hs_earners=$(cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d , -f 2)
+difference=$(bc <<< "$college_earners - $hs_earners")
+echo $difference
+10.0251729992
+
