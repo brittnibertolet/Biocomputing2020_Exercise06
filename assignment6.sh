@@ -19,4 +19,4 @@ val2=$(cat wages.csv | cut -d , -f 3,4 | grep -E "16," | sort -n | cut -d , -f 2
 VARGRAD=$(echo "$val2 - $val1" | bc)
 
 # to print tasks 2 and 3
-echo “highest earner: $VARHIGH, lowest earner: $VARLOW, number of females in top 10: $VARFEM, college grad wage difference: $VARGRAD"
+echo highest earner: $VARHIGH, lowest earner: $VARLOW, number of females in top 10: $VARFEM, college grad wage difference: $VARGRAD
