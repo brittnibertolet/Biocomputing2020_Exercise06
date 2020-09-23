@@ -33,6 +33,7 @@ cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1
 
 # I think the above needs to be stored as a variable, but when I tried the syntax the Exercise provided, I couldn't do the "bc" math part
 # CS: I think you have to cut it so only the salary is stored under the variable?
+#AZ: Good call!
 cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d, -f4 
 
 
@@ -41,11 +42,19 @@ cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1
 
 # CS: And again here? If that's right? I'm not 100% I'm answering the right question.
 # We want college earners min - high school earners min right?
+#AZ: I think so. 
 cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d, -f2  
 
 
 # Hm I was getting this error before I added the little cut thing at the end, and I'm still getting it now...
 # I'm working in the Biocomputing2020_Exercise06 folder which has wages.csv when I ls
+# AZ: I think you need a ( between the  $ and  the 'cat'  so  college_earnings=$(cat wages.csv
+# AZ: When I added (  ) I didn't get the error, but I have been having issues getting the $val1 - $val2 | bc thing to work. IF you could go to office hours, that would be awesome! I have to TA a lab today and it overlaps unfortunately. 
 chelseas-air:Biocomputing2020_Exercise06 Chelsea$ college_earnings=$cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d, -f4
 -bash: wages.csv: command not found
 
+#I think we ideally want:
+
+college_earners=$(cat wages.csv | sort -n -t , -k 3 | tail -n 16 | sort -n -t , -k 4 | head -n 1 | cut -d , -f 4)
+hs_earners=$(cat wages.csv | cut -d , -f 3,4 | grep -E "^12" | sort -n -t , -k 2 | head -n 1 | cut -d , -f 2)
+"$college_earners - $hs_earners" | bc
