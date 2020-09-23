@@ -9,8 +9,6 @@ sort -t, -k1,1 -k2,2n wages.csv | cut -d, -f1,2 | tr ',' ' ' >> "gender-yearsExp
 
 
 
-
-
 #This is the script for part 2 of exercise 6. 
 #This script must do 3 things 1) display data (gender, years experience, and wage) for highest earner 
 # 2) dislay the same data for the lowest earner and 3)display the number of females in the top 10 wage earners
@@ -66,3 +64,6 @@ difference=$(bc <<< "$college_earners - $hs_earners")
 echo $difference
 10.0251729992
 
+#Your code for part 1 works great! Part 3 stuff is giving me an error when I type it into my command line. I get an error when I try to set the difference variable. It says: (standard_in) 1: illegal character:^M
+#I did some googling and the error I am getting may be specific to a windows machine? Something about hidden characters... 
+#One last thing -- Do you know if we are supposed to be able to run this shell script (EX6.sh) and have it output all 3 of the questions? If I do $ bash Ex6.sh wages.csv I get a bunch of lines of errors.... Is this the same for you? 
