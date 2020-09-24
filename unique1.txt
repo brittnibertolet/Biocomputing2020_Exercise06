@@ -14,7 +14,6 @@ female 13
 female 14
 female 15
 female 16
-gender yearsExperience
 male 2
 male 3
 male 4
