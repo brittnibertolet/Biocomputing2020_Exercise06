@@ -18,3 +18,7 @@ cat wages.csv | sort -n -k4 -t , -r | cut -d , -f 1,2,4 | head -n 1
 
 echo "number of females in top ten earners"
 cat wages.csv | sort -n -k4 -t , -r | head -n 10 | grep -c "fe"
+
+#Outputs the effect of graduating college (12 years in school vs 16 years)
+
+cat wages.csv | grep 16 | cut -d "," -f 4 | 
