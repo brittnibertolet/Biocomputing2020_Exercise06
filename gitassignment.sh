@@ -19,6 +19,11 @@ cat wages.csv | sort -n -k4 -t , -r | cut -d , -f 1,2,4 | head -n 1
 echo "number of females in top ten earners"
 cat wages.csv | sort -n -k4 -t , -r | head -n 10 | grep -c "fe"
 
-#Outputs the effect of graduating college (12 years in school vs 16 years)
+#Outputs the difference in minimum wage of graduating college vs not graduating (12 years in school vs 16 years)
 
-cat wages.csv | cut -d "," -f 3,4 | grep "16," | awk '{ total += $2; count++ } END { print total/count }'
+college=$(cat wages.csv | cut -d "," -f 3,4 | grep "16," | cut -d "," -f 2 | sort -n | head -n 1)
+
+noncollege=$(cat wages.csv | cut -d "," -f 3,4 | grep "12," | cut -d "," -f 2 | sort -n | head -n 1) 
+
+echo "$college - $noncollege" | bc 
+
