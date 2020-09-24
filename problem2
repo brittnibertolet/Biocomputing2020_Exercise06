@@ -1,0 +1,8 @@
+#This script takes a csv file containing gender,yearsExperience,yearsEducation
+#,wages and cuts out yearsEducation and the header line. After converting to 
+#a tab delimited file file is sorted by wage. The head command should give 
+#the lowest earner, their gender and their yearsExperience
+#usage: type bash problem2.sh source .csv file into command prompt
+
+
+cat wages.csv | cut -d, -f 1,2,4 |tr "," " " |sed '/gender yearsExperience wage/d' | sort  -k3,3n >dummywage.tsv | head -n1
