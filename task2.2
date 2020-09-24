@@ -1,0 +1,2 @@
+# gender, years of experience, wage of lowest earner
+cat wages.csv | sort -t "," -nk4 | head -n 2 | cut -d "," -f 1,2,4
