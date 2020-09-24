@@ -1,0 +1,7 @@
+#in this script we call wages, cut the first two lines and grep to just get each specific years of college.
+#after this, we sort and take the lowest or minimum wage and cut again to just select this value
+#after doing this for 12 and 16 years school, we subtract the 16yr min wage from the 12yr min wage using echo and bp 
+
+val16=$(cat wages.csv | cut -d "," -f 3,4 | grep "16," | sort -n  | head -n 1 | cut -d "," -f 2)
+val12=$(cat wages.csv | cut -d "," -f 3,4 | grep "12," | sort -n  | head -n 1 | cut -d "," -f 2)
+echo "$val16-$val12" | bc

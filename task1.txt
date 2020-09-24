@@ -1,0 +1,2 @@
+cat wages.csv | cut -d "," -f 1,2 | tr "," " " | sort  -V  -k1,1 -k2
+

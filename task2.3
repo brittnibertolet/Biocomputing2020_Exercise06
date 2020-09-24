@@ -1,0 +1,3 @@
+# count of female employees in top 10 highest wage earners
+cat wages.csv | sort -t "," -nk4 | tail -n 10 | cut -d "," -f 1,2,4 | grep -E "female" | wc -l
+

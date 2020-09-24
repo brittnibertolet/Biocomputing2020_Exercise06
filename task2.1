@@ -1,0 +1,2 @@
+# gender, years experience, wage of highest earner
+cat wages.csv | sort -t "," -nk4 | tail -n 1 | cut -d "," -f 1,2,4
