@@ -5,5 +5,3 @@
 # Part 1
 cat "$1" | grep "male" | cut -d , -f 1,2 | sort -V | uniq | tr "," " " > genderExperience.txt
 
-# Part 2
-
